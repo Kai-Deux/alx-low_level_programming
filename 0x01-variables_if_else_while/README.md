@@ -9,3 +9,4 @@ This program will assign a random number to the variable n each time it is execu
 - Write a program that prints all the numbers of base 16 in lowercase, followed by a new line.
 - Write a program that prints all possible combinations of single-digit numbers.
 - Write a program that prints all possible different combinations of two digits.
+- The success combination in business is: Do what you do better... and: do more of what you do...
