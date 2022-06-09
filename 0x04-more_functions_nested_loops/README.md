@@ -46,3 +46,6 @@
 	- Where size is the size of the triangle
 	- f size is 0 or less, the function should print only a new line
 	- Use the character # to print the triangle
+11. Write a program that finds and prints the largest prime factor of the number 612852475143, followed by a new line.
+	- You are allowed to use the standard library
+	- Your program will be compiled with this command: gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-prime_factor.c -o 100-prime_factor -lm
