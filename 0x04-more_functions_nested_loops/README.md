@@ -40,3 +40,9 @@
 9. Write a program that prints the numbers from 1 to 100, followed by a new line. But for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz.
 	- Each number or word should be separated by a space
 	- You are allowed to use the standard library
+10. Write a function that prints a triangle, followed by a new line.
+	- Prototype: void print_triangle(int size);
+	- You can only use _putchar function to print
+	- Where size is the size of the triangle
+	- f size is 0 or less, the function should print only a new line
+	- Use the character # to print the triangle
