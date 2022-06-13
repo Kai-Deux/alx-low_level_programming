@@ -5,3 +5,4 @@
 	- he numbers should be displayed in the same order as they are stored in the array
 	- You are allowed to use printf
 9. Write a function that copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest.
+10. Write a function that convert a string to an integer.
