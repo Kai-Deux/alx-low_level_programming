@@ -57,3 +57,5 @@
 	- Do not remove anything from the initial code (not even the comments)
 	- and don’t change anything but the line of code you are adding (don’t change the spaces to tabs!)
 	- You are allowed to use the standard library
+11. Write a function that adds two numbers.
+	- Prototype: ```char *infinite_add(char *n1, char *n2, char *r, int size_r);```
