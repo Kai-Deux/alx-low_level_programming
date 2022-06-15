@@ -4,3 +4,4 @@
 # Project:  0x03. C - Debugging
 # Project: 0x04. C - More functions, more nested loops
 # Project: 0x05. C - Pointers, Strings & Arrays
+# Project: 0x06. C - More pointers, arrays and strings
