@@ -67,3 +67,4 @@
 	- You can assume that there will be only digits in the strings ```n1``` and ```n2```
 	- ```n1``` and ```n2``` will never be empty
 	- If the result can not be stored in ```r ```the function must return ```0```
+!!! ```_putchar``` file added
