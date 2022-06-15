@@ -42,4 +42,8 @@
 	- You are not allowed to use ```switch```
 	- You are not allowed to use any ternary operation
 9. Write a function that prints an integer.
-	- Prototype: void print_number(int n);
+	- Prototype: ```void print_number(int n);```
+	- You can only use ```if``` statement once in your code
+	- You can only use two loops in your code
+	- You are not allowed to use ```switch```
+	- You are not allowed to use any ternary operation
