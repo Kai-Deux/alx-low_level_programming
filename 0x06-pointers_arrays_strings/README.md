@@ -31,7 +31,7 @@
 	- Letters ```t``` and ```T``` should be replaced by ```7```
 	- Letters ```l``` and ```L``` should be replaced by ```1```
 	- Prototype: ```char *leet(char *);```
-	- ou can only use one ```if```in your code
+	- You can only use one ```if```in your code
 	- You can only use two loops in your code
-	- ou are not allowed to use ```switch```
+	- You are not allowed to use ```switch```
 	- You are not allowed to use any ternary operation
