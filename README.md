@@ -6,3 +6,4 @@
 # Project: 0x05. C - Pointers, Strings & Arrays
 # Project: 0x06. C - More pointers, arrays and strings
 # Project: 0x07. C - Even more pointers, arrays and strings
+# Project: 0x08. C - Recursion
