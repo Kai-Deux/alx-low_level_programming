@@ -5,5 +5,5 @@
 4. Write a program that adds positive numbers.
 5. Write a program that prints the minimum number of coins to make change for an amount of money.
 
-_MKING IT EXECUTEABLE_
-`gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o <filename>`
+- _MKING IT EXECUTEABLE_
+  - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o <filename>`
