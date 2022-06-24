@@ -7,3 +7,8 @@
 
 - _MKING IT EXECUTEABLE_
   - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o <filename>`
+  - ` gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o nargs`
+  - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o args`
+  - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o mul`
+  - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o add`
+  - `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 <filename.c> -o change`
