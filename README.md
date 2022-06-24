@@ -9,3 +9,5 @@
 # Project: 0x08. C - Recursion
 # Project: 0x09. C - Static libraries
 gdkjhjfahj
+# Project: 0x0A. C - argc, argv
+
