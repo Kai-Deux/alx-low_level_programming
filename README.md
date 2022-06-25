@@ -8,7 +8,5 @@
 # Project: 0x07. C - Even more pointers, arrays and strings
 # Project: 0x08. C - Recursion
 # Project: 0x09. C - Static libraries
-gdkjhjfahj
 # Project: 0x0A. C - argc, argv
-
 # Project: 0x0B. C - malloc, free
