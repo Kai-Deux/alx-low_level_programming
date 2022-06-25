@@ -35,5 +35,4 @@ position++;
 
 return (buffer);
 }
-
 }
