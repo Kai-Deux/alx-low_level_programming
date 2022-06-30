@@ -83,7 +83,7 @@ void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 		k--;
 	}
 
-	return (a3)
+	return (a3);
 }
 /**
  * print_array - print all digits of array.
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
 		;
 	lenres = len1 + len2;
 	tabres = _calloc(lenres, sizeof(int));
-	if (tabre == NULL)
+	if (tabres == NULL)
 	{
 		free(tabres);
 		return (0);
