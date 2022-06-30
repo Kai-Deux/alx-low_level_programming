@@ -1,91 +1,149 @@
 #include "main.h"
+/* malloc free */
 #include <stdlib.h>
-/**
- * _puts - prints a string, followed by a new line,
- * @str: pointer to the string to print
- * Return: void
-*/
 
-
-void _puts(char *str)
-{
-int i = 0;
-while (str[i])
-{
-_putchar(str[i]);
-i++;
-}
-
-}
 
 /**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
+ * initDigitArray - allocates and sets to 0 an array to contain the digits
+ *   of a base 10 number
+ *
+ * @size: array size
+ * Return: pointer to initialized array, or NULL on failure
  */
+unsigned int *initDigitArray(size_t size)
+{
+	unsigned int *arr = NULL;
+	size_t i;
 
-int _atoi(const char *s)
-{
-int sign = 1;
-unsigned long int resp = 0, firstNum, i;
+	arr = malloc(sizeof(unsigned int) * size);
+	if (!arr)
+		return (NULL);
 
-for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
-{
-if (s[firstNum] == '-')
-{
-sign *= -1;
-}
-}
+	for (i = 0; i < size; i++)
+		arr[i] = 0;
 
-for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
-{
-resp *= 10;
-resp += (s[i] - 48);
+	return (arr);
 }
 
-return (sign *resp);
-}
 
 /**
- * print_int - prints an integer.
- * @n: int
- * Return: 0
+ * stringIntMultiply - TBD
+ *
+ * @prod_digits: array to store digits of product
+ * @n1_digits: string containing multiplicand digits in ASCII
+ * @n2_digits: string containing multiplier digits in ASCII
+ * @n1_len: amount of digits in multiplicand
+ * @n2_len: amount of digits in multiplier
  */
-
-void print_int(unsigned long int n)
+void stringIntMultiply(unsigned int *prod_digits, char *n1_digits,
+		       char *n2_digits, size_t n1_len, size_t n2_len)
 {
+	int i, j, sum;
+	unsigned char digit1, digit2;
 
-unsigned  long int divisor = 1, i, resp;
+	if (prod_digits == NULL || n1_digits == NULL || n2_digits == NULL)
+		return;
 
-for (i = 0; n / divisor > 9; i++, divisor *= 10)
-;
+	for (i = n1_len - 1; i >= 0; i--)
+	{
+		sum = 0;
+		digit1 = n1_digits[i] - '0';
 
-for (; divisor >= 1; n %= divisor, divisor /= 10)
-{
-resp = n / divisor;
-_putchar('0' + resp);
+		for (j = n2_len - 1; j >= 0; j--)
+		{
+			digit2 = n2_digits[j] - '0';
+
+			sum += prod_digits[i + j + 1] + (digit1 * digit2);
+
+			prod_digits[i + j + 1] = sum % 10;
+
+			sum /= 10;
+		}
+
+		if (sum > 0)
+			prod_digits[i + j + 1] += sum;
+	}
 }
 
-}
 
 /**
- * main - print the result of the multiplication, followed by a new line
- * @argc: int
- * @argv: list
- * Return: 0
+ * stringIsPosInt - validates if string represents a positive integer
+ *
+ * @s: string to test
+ * Return: 1 if true, 0 if false
  */
-
-int main(int argc, char const *argv[])
+int stringIsPosInt(char *s)
 {
-(void)argc;
+	size_t i;
 
-if (argc != 3)
-{
-_puts("Error ");
-exit(98);
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	}
+
+	return (1);
 }
-print_int(_atoi(argv[1]) * _atoi(argv[2]));
-_putchar('\n');
 
-return (0);
+
+/**
+ * error - error return
+ *
+ * @status: error code to exit with
+ */
+void error(int status)
+{
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	_putchar('\n');
+	exit(status);
+}
+
+
+/**
+ * main - entry point
+ *
+ * @argc: number of commmand line arguments
+ * @argv: array of commmand line arguments
+ * Return: 0 on success, 98 on failure
+ */
+int main(int argc, char **argv)
+{
+	size_t i, av1_len, av2_len, prod_len;
+	unsigned int *prod_digits = NULL;
+
+	if (argc != 3 || !stringIsPosInt(argv[1]) ||
+	    !stringIsPosInt(argv[2]))
+		error(98);
+
+	for (i = 0, av1_len = 0; argv[1][i]; i++)
+		av1_len++;
+
+	for (i = 0, av2_len = 0; argv[2][i]; i++)
+		av2_len++;
+
+	prod_len = av1_len + av2_len;
+	prod_digits = initDigitArray(prod_len);
+	if (prod_digits == NULL)
+		error(98);
+
+	stringIntMultiply(prod_digits, argv[1], argv[2], av1_len, av2_len);
+
+	/* omit leading zeroes */
+	for (i = 0; !prod_digits[i] && i < prod_len; i++)
+	{}
+
+	if (i == prod_len)
+		_putchar('0');
+
+	for (; i < prod_len; i++)
+		_putchar(prod_digits[i] + '0');
+	_putchar('\n');
+
+	free(prod_digits);
+
+	return (0);
 }
