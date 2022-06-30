@@ -1,48 +1,26 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h> 
-
-#define ERR_MSG "Error"
-
-int _isdigit(char *s);
+#include <stdio.h>
 
 /**
- * main - takes two numbers as arguments and outputs the product.
- * @argc: the number of arguments including name of program.
- * @argv: an array of arguments
- *
- * Return: 0 if successful.
- */
-int main(int argc, char *argv[])
-{
-	int i;
-	if (argc != 3)
-	{
-		for (i = 0; ERR_MSG[i] != '\0'; i++)
-			_putchar(ERR_MSG[i]);
-		_putchar(10);
-		exit(98);
-	}
-	if (_isdigit(argv[1]) == 0)
-		printf("%s\n", argv[1]);
-		
-	return (0);
-}
-
-/**
- * isdigit - checks if string is a number or not
- * @s: the string to be checked
- *
- * Return: 1 if true, else 0.
+ *mul - a function to multiply arguments
+ *@argv: accepts argument and builds an array
+ *@argc: counts the arguments
+ *Return: returns
  */
 
-int _isdigit(char *s)
+int mul(int argc, unsigned int *argv)
 {
-	while (*s)
-	{
-		if (*s < 48 || *s > 57)
-			return (1);
-		s++;
-	}
-	return (0);
+if (argc > 2)
+printf("Error\n");
+exit(98);
+
+if (argv[0]/10 != 0 || argv[1]/10 != 0)
+printf("Error\n");
+exit(98);
+
+int ans = argv[0] * argv[1];
+printf(ans);
+
+return (0);
 }
