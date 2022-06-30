@@ -1,26 +1,29 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
- *mul - a function to multiply arguments
- *@argv: accepts argument and builds an array
- *@argc: counts the arguments
- *Return: returns
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
  */
-
-int mul(int argc, unsigned int *argv)
+int main(int argc, char *argv[])
 {
-if (argc > 2)
-printf("Error\n");
-exit(98);
+unsigned long mul;
+int i, j;
+	if (argc != 3)
+	{ printf("Error\n");
+	exit(98); }
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{  printf("Error\n");
+			exit(98); }
+		}
 
-if (argv[0]/10 != 0 || argv[1]/10 != 0)
-printf("Error\n");
-exit(98);
-
-int ans = argv[0] * argv[1];
-printf(ans);
-
+	}
+	mul = atol(argv[1]) *atol(argv[2]);
+	printf("%lu\n", mul);
 return (0);
 }
