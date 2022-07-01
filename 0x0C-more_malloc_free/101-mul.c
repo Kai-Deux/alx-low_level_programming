@@ -1,4 +1,3 @@
-101-mul.c :arrow_heading_down:
 
 #include "main.h"
 #include <stdlib.h>
