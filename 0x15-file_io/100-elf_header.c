@@ -1,7 +1,7 @@
 /*
-* File: 100-elf_header.c
-* Auth: Rohisha Ramauthar
-*/
+ * File: 100-elf_header.c
+ * Auth: RR
+ */
 
 #include <elf.h>
 #include <sys/types.h>
