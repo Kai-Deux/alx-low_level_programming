@@ -1,1 +1,1 @@
-chmod
+lib
